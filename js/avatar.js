@@ -56,6 +56,8 @@ function avatar(val) {
 			var t = self.traits[index];
 			var _traits = self.getAllTraitValsExcept(t);
 			t().run(self.initVal, _traits);
+			
+			console.log("Trait ", t().name, " has a value of ", t().value);
 		}
 	}
 
@@ -88,10 +90,13 @@ function avatar(val) {
 		var val = _t().value;
 
 		self.traits = t;
-
-		console.log("Trait ", _t().name, " has a value of ", val);
 	}
-
+	
+	self.obj.createTrait = function(name, func){
+		var t = new trait(name, func);
+		
+		self.obj.setTrait(t);
+	}
 
 	return self.obj;
 }

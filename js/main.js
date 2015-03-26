@@ -3,6 +3,7 @@ $(document).ready(function () {
 		var val = $('#name').val();
 		if(val !== ''){
 			Avatar.create(val);
+			Avatar.build();
 		}
 	});
 });

@@ -1,6 +1,7 @@
-var mytrait = new trait('Eric', function (initValue, traits) {
+Avatar.createTrait('Eric', function (initValue, traits) {
 	//default value
 	var val = "hello - " + new Date().getTime();
+	
 	if (traits && traits.length > 0) {
 		//dynamic value with other traits being used
 		val = traits[0] + ' - ' + new Date().getTime();
@@ -9,9 +10,7 @@ var mytrait = new trait('Eric', function (initValue, traits) {
 	return val;
 });
 
-Avatar.setTrait(mytrait);
-
-var mytrait2 = new trait('height', function (initValue, traits) {
+Avatar.createTrait('height', function (initValue, traits) {
 	//default value
 	var val = "help me";
 	if (traits && traits.length > 0) {
@@ -21,5 +20,3 @@ var mytrait2 = new trait('height', function (initValue, traits) {
 
 	return val;
 });
-
-Avatar.testTrait(mytrait2);
